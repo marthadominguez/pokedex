@@ -1,14 +1,14 @@
-import { SET_POKEMON } from "./type"
+import { SET_POKEMON, SET_FAVORITE } from "./type"
 import axios from 'axios';
 
 //2
 export const setPokemon = (payload) => ({
     //accion que estamos realizando
     type: SET_POKEMON,
-    payload,
+    payload
 })
 
-export const setPokemonsDetails = (pokemons = []) => 
+export const setPokemonsDetails = (pokemons = []) =>
     async (dispatch) => {
         try {
             const pokemonsDetails = await Promise.all(pokemons.map(
@@ -19,5 +19,9 @@ export const setPokemonsDetails = (pokemons = []) =>
             ))
             dispatch(setPokemon(pokemonsDetails));
         } catch (err) { console.error(err) }
-
     };
+
+export const setFavorite = (payload) => ({
+    type: SET_FAVORITE,
+    payload,
+})

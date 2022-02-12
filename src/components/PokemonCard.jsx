@@ -1,5 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import { useDispatch } from "react-redux";
+import { setFavorite } from "../actions/index";
 
 const PokemonCard = ({ pokemon }) => {
   const colores = {
@@ -22,10 +24,16 @@ const PokemonCard = ({ pokemon }) => {
     dragon: "bg-orange-200",
   };
 
+  const dispatch = useDispatch();
+  const color = pokemon.favorite ? "text-yellow-300" : "text-gray-200";
+  const handleFavorite = () => {
+    dispatch(setFavorite({pokemonId: pokemon.id}))
+  }
+
   return (
     <div className="bg-slate-50 m-3 px-4 py-4 rounded-2xl flex flex-col drop-shadow-md">
       <img
-        className="bg-slate-100 rounded-lg pb-4 w-44 mb-4 border"
+        className="bg-slate-100 rounded-lg pb-4 w-44 mb-4 border border-2"
         src={pokemon.sprites.other.home.front_default}
         alt="Pokemon front"
         loading="lazy"
@@ -46,7 +54,8 @@ const PokemonCard = ({ pokemon }) => {
             </p>
           );
         })}
-        <Icon className="cursor-pointer text-2xl text-stone-200 ml-auto" icon="uim:favorite" />
+        <button className="cursor-pointer ml-auto" onClick={handleFavorite}>
+        <Icon className={`text-2xl ${color}`} icon="uim:favorite" /></button>
       </div>
     </div>
   );
@@ -54,20 +63,3 @@ const PokemonCard = ({ pokemon }) => {
 
 export default PokemonCard;
 
-// if (type.type.name === "grass") {
-//   return (
-//     <p
-//       key={index}
-//       className="bg-emerald-200 rounded-md w-fit px-2 my-1 mr-1 text-xs tracking-wider"
-//     >
-//       {type.type.name}
-//     </p>
-//   );
-// } else {
-//   return (<p
-//     key={index}
-//     className="bg-red-200 rounded-md w-fit px-2 my-1 mr-1 text-xs tracking-wider"
-//   >
-//     {type.type.name}
-//   </p>)
-// }
