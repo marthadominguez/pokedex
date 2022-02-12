@@ -1,12 +1,12 @@
 import React from "react";
 import PokemonCard from "./PokemonCard";
 
-const PokemonList = ({ listaPokemon }) => {
+const PokemonList = ({ pokemonList }) => {
 
   return (
     <section className="flex justify-center">
-      <div className="grid justify-items-center grid-cols-2 md:grid-cols-4 md:w-auto bg-slate-200">
-        {listaPokemon.map((pokemon, index) => (
+      <div className="grid justify-items-center bg-slate-200 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {pokemonList.map((pokemon, index) => (
           <PokemonCard key={index} pokemon={pokemon}></PokemonCard>
         ))}
       </div>

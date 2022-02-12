@@ -1,4 +1,4 @@
-import { SET_POKEMON, SET_FAVORITE } from "./type"
+import { SET_POKEMON, SET_FAVORITE, SEARCH_VALUE } from "./type"
 import axios from 'axios';
 
 //2
@@ -25,3 +25,9 @@ export const setFavorite = (payload) => ({
     type: SET_FAVORITE,
     payload,
 })
+
+export const searchValue = (payload) => ({
+    type: SEARCH_VALUE,
+    payload
+})
+

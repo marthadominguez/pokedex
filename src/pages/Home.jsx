@@ -9,7 +9,8 @@ import { setPokemonsDetails } from "../actions/index";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const listaPokemon = useSelector((state) => state.list);
+  const pokemonList = useSelector((state) => state.filteredList);
+  // const filteredList = useSelector((state)=> state.filteredList); 
 
   useEffect(() => {
     getPokemons()
@@ -25,11 +26,14 @@ const Home = () => {
   return (
     <>
       <header className="App-header">
-        <Navbar></Navbar>
+        <Navbar/>
       </header>
-      <main className="bg-slate-200 flex flex-col items-center">
-        <Searchbar></Searchbar>
-        <PokemonList listaPokemon={listaPokemon}></PokemonList>
+      <main className="bg-slate-200 flex flex-col m-auto mb-4 w-max md:mb-16">
+        <div className="flex justify-between">
+          <Searchbar/>
+          <h2 className="text-md py-2 my-6 mx-4 text-slate-500 cursor-pointer underline underline-offset-1 hover:text-red-500">Mostrar favoritos</h2>
+        </div>
+        <PokemonList pokemonList={pokemonList}></PokemonList>
       </main>
     </>
   );
