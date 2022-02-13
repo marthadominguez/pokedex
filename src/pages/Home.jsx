@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../components/Navbar";
 import PokemonList from "../components/PokemonList";
 import Searchbar from "../components/Searchbar";
+import Modal from "../components/Modal";
 //5
 import { getPokemons } from "../api/getPokemons";
 import { setPokemonsDetails } from "../actions/index";
@@ -37,15 +38,12 @@ const Home = () => {
             </h2>
           </button>
         </div>
+        <Modal></Modal>
         <PokemonList pokemonList={pokemonList} />
       </main>
       <Footer />
     </>
   );
 };
-
-const Modal = () => {
-
-}
 
 export default Home;
