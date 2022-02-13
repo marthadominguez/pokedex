@@ -13,7 +13,7 @@ const Searchbar = () => {
   return (
     <input
       type="search"
-      placeholder="Encuentra tu Pokemon Favorito..."
+      placeholder="Busca por nombre o tipo..."
       className="bg-slate-50 w-72 py-2 px-4 my-4 mx-4 rounded-lg drop-shadow-sm focus:outline-none"
       onChange={handleSearch}
     />

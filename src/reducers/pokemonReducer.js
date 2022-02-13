@@ -1,8 +1,9 @@
-import { SET_POKEMON, SET_FAVORITE, SEARCH_VALUE } from "../actions/type"
+import { SET_POKEMON, SET_FAVORITE, SEARCH_VALUE } from "../actions/index"
 
 const initialState = {
     list: [],
-    filteredList: []
+    filteredList: [],
+    favoriteList: []
 }
 
 //3
@@ -16,15 +17,22 @@ export const pokemonReducer = (state = initialState, action) => {
             if (currentPokemonIndex >= 0) {
                 newPokemonList[currentPokemonIndex].favorite = !newPokemonList[currentPokemonIndex].favorite
             }
-            return { ...state, filteredList: newPokemonList}
+            const favoritePokemons = [...state.favoriteList]
+            if (newPokemonList[currentPokemonIndex].favorite) {
+                favoritePokemons.push(newPokemonList[currentPokemonIndex])
+            } else if (!newPokemonList[currentPokemonIndex].favorite) {
+                favoritePokemons.pop(newPokemonList[currentPokemonIndex].favorite)
+            }
+            return { ...state, filteredList: newPokemonList, favoriteList: favoritePokemons }
         case SEARCH_VALUE:
-            const listToFilter = [...state.list] 
+            const listToFilter = [...state.list]
             const value = action.payload.value;
-            const filteredValue = listToFilter.filter( pokemon => {
-                const result = pokemon.name.toLowerCase().includes(value.toLowerCase());
-                return result
+            const filteredValue = listToFilter.filter(pokemon => {
+                return pokemon.types[0]?.type.name.toLowerCase().includes(value.toLowerCase())
+                    || pokemon.name.toLowerCase().includes(value.toLowerCase()) || pokemon.types[1]?.type.name.toLowerCase().includes(value.toLowerCase())
             });
-            return { ...state, filteredList: filteredValue}
+            console.log(filteredValue)
+            return { ...state, filteredList: filteredValue }
         default:
             return { ...state }
     }
