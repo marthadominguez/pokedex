@@ -6,6 +6,7 @@ import Searchbar from "../components/Searchbar";
 //5
 import { getPokemons } from "../api/getPokemons";
 import { setPokemonsDetails } from "../actions/index";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -31,10 +32,11 @@ const Home = () => {
       <main className="bg-slate-200 flex flex-col m-auto mb-4 w-max md:mb-16">
         <div className="flex justify-between">
           <Searchbar/>
-          <h2 className="text-md py-2 my-6 mx-4 text-slate-500 cursor-pointer underline underline-offset-1 hover:text-red-500">Mostrar favoritos</h2>
+          <h2 className="text-md py-2 my-4 mx-4 text-slate-500 cursor-pointer underline underline-offset-1 hover:text-red-500">Mostrar favoritos</h2>
         </div>
-        <PokemonList pokemonList={pokemonList}></PokemonList>
+        <PokemonList pokemonList={pokemonList}/>
       </main>
+      <Footer/>
     </>
   );
 };
