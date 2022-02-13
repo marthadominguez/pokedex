@@ -4,6 +4,7 @@ import axios from 'axios';
 export const SET_POKEMON = 'SET_POKEMON';
 export const SET_FAVORITE = 'SET_FAVORITE';
 export const SEARCH_VALUE  = 'SEARCH_VALUE';
+export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 
 //2
 export const setPokemon = (payload) => ({
@@ -33,4 +34,8 @@ export const setFavorite = (payload) => ({
 export const searchValue = (payload) => ({
     type: SEARCH_VALUE,
     payload
+})
+
+export const toggleModal = () => ({
+    type: TOGGLE_MODAL
 })
