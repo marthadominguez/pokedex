@@ -5,7 +5,7 @@ const initialState = {
     filteredList: [],
     favoriteList: [],
     openModal: false,
-    searchedValue: ""
+    searchedValue: "",
 }
 
 //3

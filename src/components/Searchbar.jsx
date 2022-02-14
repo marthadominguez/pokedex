@@ -14,7 +14,7 @@ const Searchbar = () => {
     <input
       type="search"
       placeholder="Busca por nombre o tipo..."
-      className="bg-slate-50 w-auto py-2 px-4 my-4 rounded-lg drop-shadow-sm focus:outline-none sm:mx-2"
+      className="bg-slate-50 text-sm w-auto py-2 px-4 my-4 rounded-lg drop-shadow-sm focus:outline-none sm:mx-2 sm:text-md"
       onChange={handleSearch}
     />
   );
