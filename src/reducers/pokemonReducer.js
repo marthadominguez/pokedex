@@ -1,4 +1,4 @@
-import { SET_POKEMON, SET_FAVORITE, SEARCH_VALUE, TOGGLE_MODAL } from "../actions/index"
+import { SET_POKEMON, SET_FAVORITE, SEARCH_VALUE, TOGGLE_MODAL, EMPTY_FILTERED } from "../actions/index"
 
 const initialState = {
     list: [],
@@ -14,7 +14,6 @@ export const pokemonReducer = (state = initialState, action) => {
         case SET_POKEMON:
             return { ...state, list: action.payload, filteredList: action.payload }
         case SET_FAVORITE:
-            state.filteredList = [...state.list]
             const newPokemonList = [...state.filteredList]
             const currentPokemonIndex = newPokemonList.findIndex((element) => element.id === action.payload.pokemonId)
             // console.log("hola",newPokemonList[currentPokemonIndex])
@@ -40,6 +39,8 @@ export const pokemonReducer = (state = initialState, action) => {
             return { ...state, filteredList: filteredValue, searchedValue: value }
         case TOGGLE_MODAL:
             return { ...state, openModal: !state.openModal };
+        case EMPTY_FILTERED:
+            return { ...state, filteredList: state.list }
         default:
             return { ...state }
     }

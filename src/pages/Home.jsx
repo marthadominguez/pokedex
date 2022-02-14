@@ -6,7 +6,7 @@ import PokemonList from "../components/PokemonList";
 import Searchbar from "../components/Searchbar";
 import FavoritePokemons from "../components/FavoritePokemons";
 import { getPokemons } from "../api/getPokemons";
-import { setPokemonsDetails, toggleModal } from "../actions/index";
+import { setPokemonsDetails, toggleModal, emptyFiltered } from "../actions/index";
 import Footer from "../components/Footer";
 import EmptyState from "../components/EmptyState";
 
@@ -30,6 +30,7 @@ const Home = () => {
 
   const handleModal = () => {
     dispatch(toggleModal());
+    dispatch(emptyFiltered());
   };
   // w-11/12 sm:px-16 lg:px-20 lg:w-[70rem]
   return (

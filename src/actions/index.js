@@ -5,6 +5,7 @@ export const SET_POKEMON = 'SET_POKEMON';
 export const SET_FAVORITE = 'SET_FAVORITE';
 export const SEARCH_VALUE  = 'SEARCH_VALUE';
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
+export const EMPTY_FILTERED = 'EMPTY_FILTERED';
 
 //2
 export const setPokemon = (payload) => ({
@@ -38,4 +39,8 @@ export const searchValue = (payload) => ({
 
 export const toggleModal = () => ({
     type: TOGGLE_MODAL
+})
+
+export const emptyFiltered = () => ({
+    type: EMPTY_FILTERED
 })
