@@ -18,9 +18,6 @@ const Home = () => {
   const searchedValue = useSelector((state) => state.searchedValue);
   const openModal = useSelector((state) => state.openModal);
 
-  console.log("filteredList", pokemonList);
-  console.log("initialPokemonList", initialPokemonList);
-
   useEffect(() => {
     getPokemons()
       .then((res) => {
