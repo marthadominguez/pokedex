@@ -31,7 +31,7 @@ const PokemonCard = ({ pokemon }) => {
   }
 
   return (
-    <div className="bg-slate-50 my-4 mx-2 px-4 py-4 rounded-2xl flex flex-col drop-shadow-md card">
+    <div className="bg-slate-50 my-4 mx-2 px-4 py-4 rounded-2xl flex flex-col drop-shadow-md card sm:w-44">
       <img
         className="bg-slate-100 rounded-lg pb-4 mb-4 border-2 w-auto"
         src={pokemon.sprites.other.home.front_default}
