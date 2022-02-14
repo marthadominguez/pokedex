@@ -5,13 +5,13 @@ import Navbar from "../components/Navbar";
 import PokemonList from "../components/PokemonList";
 import Searchbar from "../components/Searchbar";
 import FavoritePokemons from "../components/FavoritePokemons";
-//5
 import { getPokemons } from "../api/getPokemons";
 import { setPokemonsDetails, toggleModal } from "../actions/index";
 import Footer from "../components/Footer";
 import EmptyState from "../components/EmptyState";
 
 const Home = () => {
+  //5
   const dispatch = useDispatch();
   const initialPokemonList = useSelector((state) => state.list);
   const pokemonList = useSelector((state) => state.filteredList);
