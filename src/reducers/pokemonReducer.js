@@ -14,13 +14,15 @@ export const pokemonReducer = (state = initialState, action) => {
         case SET_POKEMON:
             return { ...state, list: action.payload, filteredList: action.payload }
         case SET_FAVORITE:
+            state.filteredList = [...state.list]
             const newPokemonList = [...state.filteredList]
             const currentPokemonIndex = newPokemonList.findIndex((element) => element.id === action.payload.pokemonId)
+            // console.log("hola",newPokemonList[currentPokemonIndex])
             if (currentPokemonIndex >= 0) {
                 newPokemonList[currentPokemonIndex].favorite = !newPokemonList[currentPokemonIndex].favorite
             }
             let favoritePokemons = [...state.favoriteList]
-            if (newPokemonList[currentPokemonIndex].favorite) {
+            if (newPokemonList[currentPokemonIndex].favorite === true) {
                 favoritePokemons.push(newPokemonList[currentPokemonIndex])
             } else if (!newPokemonList[currentPokemonIndex].favorite) {
                 favoritePokemons = favoritePokemons.filter(pokemon => {

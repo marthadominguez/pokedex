@@ -5,6 +5,7 @@ import EmptyState from "./EmptyState";
 
 const FavoritePokemons = () => {
   const favoritePokemonList = useSelector((state) => state.favoriteList);
+  console.log(favoritePokemonList)
 
   return (
     <>
