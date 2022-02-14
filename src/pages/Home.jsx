@@ -9,17 +9,22 @@ import FavoritePokemons from "../components/FavoritePokemons";
 import { getPokemons } from "../api/getPokemons";
 import { setPokemonsDetails, toggleModal } from "../actions/index";
 import Footer from "../components/Footer";
+import EmptyState from "../components/EmptyState";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const initialPokemonList = useSelector((state) => state.list);
   const pokemonList = useSelector((state) => state.filteredList);
+  const searchedValue = useSelector((state) => state.searchedValue);
   const openModal = useSelector((state) => state.openModal);
+
+  console.log("pokemonList", pokemonList);
+  console.log("Valor a buscar", searchedValue);
 
   useEffect(() => {
     getPokemons()
       .then((res) => {
         dispatch(setPokemonsDetails(res.results));
-        console.log(res);
       })
       .catch((err) => {
         console.error(err);
@@ -35,16 +40,22 @@ const Home = () => {
       <header className="App-header">
         <Navbar />
       </header>
-      <main className="bg-slate-200 flex flex-col m-auto mb-4 w-max md:mb-16">
-        <div className="flex justify-between">
+      <main className="bg-slate-200 flex flex-col mb-4 md:mb-16">
+        <div className="flex justify-between m-auto px-6 w-11/12 sm:px-16 lg:px-20 lg:w-10/12">
           <Searchbar />
           <button onClick={handleModal}>
-            <h2 className="text-md py-2 my-4 mx-4 text-slate-500 cursor-pointer underline underline-offset-1 hover:text-red-500">
+            <h2 className="text-md text-slate-500 py-2 my-4 ml-4 cursor-pointer underline underline-offset-1 hover:text-red-500">
               Mostrar favoritos
             </h2>
           </button>
         </div>
-        <PokemonList pokemonList={pokemonList} />
+        {searchedValue === "" ? (
+          <PokemonList pokemonList={initialPokemonList} />
+        ) : pokemonList.length !== 0 && searchedValue !== "" ? (
+          <PokemonList pokemonList={pokemonList} />
+        ) : (
+          <EmptyState texto={`No se encontraron resultados para "${searchedValue}".`} />
+        )}
         <Dialog open={openModal} fullWidth maxWidth="md">
           <div className="bg-slate-200 flex flex-col items-center">
             <h2 className="text-3xl font-bold pt-4 text-slate-800 tracking-wide">

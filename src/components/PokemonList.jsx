@@ -4,8 +4,8 @@ import PokemonCard from "./PokemonCard";
 const PokemonList = ({ pokemonList }) => {
 
   return (
-    <section className="flex justify-center">
-      <div className="grid justify-items-center bg-slate-200 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <section className="flex justify-around">
+      <div className="flex flex-wrap bg-slate-200 justify-between px-3  w-11/12 sm:px-16 lg:px-20 lg:w-10/12">
         {pokemonList.map((pokemon, index) => (
           <PokemonCard key={index} pokemon={pokemon}/>
         ))}
@@ -15,3 +15,5 @@ const PokemonList = ({ pokemonList }) => {
 };
 
 export default PokemonList;
+
+// grid-cols-2 md:grid-cols-3 lg:grid-cols-4

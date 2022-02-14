@@ -4,7 +4,8 @@ const initialState = {
     list: [],
     filteredList: [],
     favoriteList: [],
-    openModal: false
+    openModal: false,
+    searchedValue: ""
 }
 
 //3
@@ -34,7 +35,7 @@ export const pokemonReducer = (state = initialState, action) => {
                 return pokemon.types[0]?.type.name.toLowerCase().includes(value.toLowerCase())
                     || pokemon.name.toLowerCase().includes(value.toLowerCase()) || pokemon.types[1]?.type.name.toLowerCase().includes(value.toLowerCase())
             });
-            return { ...state, filteredList: filteredValue }
+            return { ...state, filteredList: filteredValue, searchedValue: value }
         case TOGGLE_MODAL:
         return { ...state, openModal: !state.openModal };
         default:
