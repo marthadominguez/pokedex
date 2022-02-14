@@ -26,7 +26,7 @@ const Home = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleModal = () => {
     dispatch(toggleModal());
@@ -51,7 +51,9 @@ const Home = () => {
         ) : pokemonList.length !== 0 && searchedValue !== "" ? (
           <PokemonList pokemonList={pokemonList} />
         ) : (
-          <EmptyState texto={`No se encontraron resultados para "${searchedValue}".`} />
+          <EmptyState
+            texto={`No se encontraron resultados para "${searchedValue}".`}
+          />
         )}
         <Dialog open={openModal} fullWidth maxWidth="md">
           <div className="bg-slate-200 flex flex-col items-center">
