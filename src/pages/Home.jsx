@@ -26,7 +26,7 @@ const Home = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, [dispatch]);
+  }, []);
 
   const handleModal = () => {
     dispatch(toggleModal());
@@ -38,10 +38,10 @@ const Home = () => {
         <Navbar />
       </header>
       <main className="bg-slate-200 flex flex-col mb-4 md:mb-16 ">
-        <div className="flex justify-start m-auto px-6 w-11/12 sm:px-16 m:px-16 lg:px-20 lg:w-10/12">
+        <div className="flex justify-between m-auto px-6 w-11/12 sm:px-16 m:px-16 lg:px-20 lg:w-10/12">
           <Searchbar />
           <button onClick={handleModal}>
-            <h2 className="text-md text-slate-500 py-2 my-4 ml-4 cursor-pointer underline underline-offset-1 hover:text-red-500">
+            <h2 className="text-md text-slate-500 py-2 my-4 ml-4 cursor-pointer underline underline-offset-1 hover:text-red-500 sm:mx-2">
               Mostrar favoritos
             </h2>
           </button>

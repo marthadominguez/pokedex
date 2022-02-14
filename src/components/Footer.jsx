@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 
 const Footer = () => {
   return (
-    <footer className="fixed flex items-center justify-center top-1/2 -left-32 rotate-90 w-72 h-8 bg-slate-300 text-slate-600 tracking-wider rounded-t-lg">
+    <footer className="fixed flex items-center justify-center top-1/2 -left-28 rotate-90 w-64 h-6 bg-slate-300 text-slate-600 tracking-wider rounded-t-lg text-sm sm:text-lg sm:w-72 sm:-left-32">
       <p>Martha L. Domínguez</p>
       <p className="mx-2">|</p>
       <a
@@ -12,7 +12,7 @@ const Footer = () => {
         className="link"
         href="https://www.linkedin.com/in/martha-liliana-dom%C3%ADnguez-09b722136"
       >
-        <Icon className="text-xl hover:text-slate-800" icon="akar-icons:linkedin-box-fill" />
+        <Icon className="text-md hover:text-slate-800 sm:text-lg" icon="akar-icons:linkedin-box-fill" />
       </a>
       <a
         target="_blank"
@@ -20,7 +20,7 @@ const Footer = () => {
         className="link"
         href="https://github.com/marthadominguez"
       >
-        <Icon className="ml-2 text-xl hover:text-slate-800" icon="akar-icons:github-fill" />
+        <Icon className="ml-2 text-md hover:text-slate-800 sm:text-lg" icon="akar-icons:github-fill" />
       </a>
     </footer>
   );

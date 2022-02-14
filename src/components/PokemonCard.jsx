@@ -31,14 +31,14 @@ const PokemonCard = ({ pokemon }) => {
   }
 
   return (
-    <div className="bg-slate-50 w-48 my-4 mx-2 px-4 py-4 rounded-2xl flex flex-col drop-shadow-md card">
+    <div className="bg-slate-50 my-4 mx-2 px-4 py-4 rounded-2xl flex flex-col drop-shadow-md card">
       <img
-        className="bg-slate-100 rounded-lg pb-4 w-44 mb-4 border-2"
+        className="bg-slate-100 rounded-lg pb-4 mb-4 border-2 w-auto"
         src={pokemon.sprites.other.home.front_default}
         alt="Pokemon front"
         loading="lazy"
       ></img>
-      <p className="capitalize text-2xl tracking-wider text-slate-900">
+      <p className="capitalize text-lg tracking-wider text-slate-900 sm:text-2xl">
         {pokemon.name}
       </p>
       <div className="flex">
@@ -48,14 +48,14 @@ const PokemonCard = ({ pokemon }) => {
               key={index}
               className={`${
                 colores[type.type.name]
-              } rounded-md w-fit px-2 h-auto my-1 mr-1 text-sm tracking-wider`}
+              } rounded-md w-fit px-2 h-auto my-1 mr-1 text-xs tracking-wider sm:text-sm`}
             >
               {type.type.name}
             </p>
           );
         })}
         <button className="cursor-pointer ml-auto" onClick={handleFavorite}>
-        <Icon className={`text-2xl ${color}`} icon="uim:favorite" /></button>
+        <Icon className={`text-lg ${color} sm:text-2xl`} icon="uim:favorite" /></button>
       </div>
     </div>
   );
