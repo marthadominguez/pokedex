@@ -26,7 +26,7 @@ const Home = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [dispatch]);
 
   const handleModal = () => {
     dispatch(toggleModal());
