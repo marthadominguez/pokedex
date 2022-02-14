@@ -12,7 +12,7 @@ const initialState = {
 export const pokemonReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_POKEMON:
-            return { ...state, list: action.payload }
+            return { ...state, list: action.payload, filteredList: action.payload }
         case SET_FAVORITE:
             const newPokemonList = [...state.filteredList]
             const currentPokemonIndex = newPokemonList.findIndex((element) => element.id === action.payload.pokemonId)
@@ -37,7 +37,7 @@ export const pokemonReducer = (state = initialState, action) => {
             });
             return { ...state, filteredList: filteredValue, searchedValue: value }
         case TOGGLE_MODAL:
-        return { ...state, openModal: !state.openModal };
+            return { ...state, openModal: !state.openModal };
         default:
             return { ...state }
     }

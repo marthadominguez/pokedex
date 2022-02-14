@@ -18,8 +18,8 @@ const Home = () => {
   const searchedValue = useSelector((state) => state.searchedValue);
   const openModal = useSelector((state) => state.openModal);
 
-  console.log("pokemonList", pokemonList);
-  console.log("Valor a buscar", searchedValue);
+  console.log("filteredList", pokemonList);
+  console.log("initialPokemonList", initialPokemonList);
 
   useEffect(() => {
     getPokemons()
@@ -34,14 +34,14 @@ const Home = () => {
   const handleModal = () => {
     dispatch(toggleModal());
   };
-
+  // w-11/12 sm:px-16 lg:px-20 lg:w-[70rem]
   return (
     <>
       <header className="App-header">
         <Navbar />
       </header>
-      <main className="bg-slate-200 flex flex-col mb-4 md:mb-16">
-        <div className="flex justify-between m-auto px-6 w-11/12 sm:px-16 lg:px-20 lg:w-10/12">
+      <main className="bg-slate-200 flex flex-col mb-4 md:mb-16 ">
+        <div className="flex justify-start m-auto px-6 w-11/12 sm:px-16 m:px-16 lg:px-20 lg:w-10/12">
           <Searchbar />
           <button onClick={handleModal}>
             <h2 className="text-md text-slate-500 py-2 my-4 ml-4 cursor-pointer underline underline-offset-1 hover:text-red-500">

@@ -10,3 +10,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(226 232 240);
 }
+
+.card:hover {
+  transform: scale(1.03);
+  transition: 350ms all ease-in-out;
+}
+
+.card {
+  transform: translate3d(0px, 2px, 0px);
+  transition: 350ms all ease-in-out;
+}
