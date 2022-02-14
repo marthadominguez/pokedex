@@ -45,7 +45,7 @@ const PokemonCard = ({ pokemon }) => {
         {pokemon.types.map((type, index) => {
           return (
             <p
-              key={index}
+              key={`typepokemon-${index}`}
               className={`${
                 colores[type.type.name]
               } rounded-md w-fit px-2 h-auto my-1 mr-1 text-xs tracking-wider sm:text-sm`}
