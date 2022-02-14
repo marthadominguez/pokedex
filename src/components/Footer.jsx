@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 
 const Footer = () => {
   return (
-    <footer className="fixed flex items-center justify-center top-1/2 -left-28 rotate-90 w-64 h-6 bg-slate-300 text-slate-600 tracking-wider rounded-t-lg text-sm sm:text-lg sm:w-72 sm:-left-32">
+    <footer className="fixed flex items-center justify-center top-1/2 -left-28 rotate-90 w-64 h-6 bg-slate-300 text-slate-600 tracking-wider rounded-t-lg text-sm sm:text-lg sm:w-72 sm:h-8 sm:-left-32">
       <p>Martha L. Domínguez</p>
       <p className="mx-2">|</p>
       <a
