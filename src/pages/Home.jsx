@@ -41,7 +41,7 @@ const Home = () => {
         <div className="flex justify-between m-auto px-4 w-11/12 sm:px-16 sm:justify-start m:px-16 lg:px-20 lg:w-10/12">
           <Searchbar />
           <button onClick={handleModal}>
-            <h2 className=" text-slate-500 text-sm py-2 my-4 ml-4 cursor-pointer underline underline-offset-1 hover:text-red-500 sm:mx-2 sm:text-md">
+            <h2 className=" text-slate-500 text-sm py-2 my-4 ml-4 cursor-pointer underline underline-offset-1 hover:text-red-500 sm:mx-2 sm:text-base">
               Mostrar favoritos
             </h2>
           </button>
@@ -62,7 +62,7 @@ const Home = () => {
             </h2>
             <button
               onClick={handleModal}
-              className="text-md text-slate-500 underline underline-offset-1 hover:text-red-500"
+              className="text-base text-slate-500 underline underline-offset-1 hover:text-red-500"
             >
               Volver
             </button>
