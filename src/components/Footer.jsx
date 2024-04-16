@@ -10,7 +10,7 @@ const Footer = () => {
         target="_blank"
         rel="noreferrer"
         className="link"
-        href="https://www.linkedin.com/in/martha-liliana-dom%C3%ADnguez-09b722136"
+        href="https://www.linkedin.com/in/marthaldominguez/"
       >
         <Icon className="text-base hover:text-slate-800 sm:text-lg" icon="akar-icons:linkedin-box-fill" />
       </a>
